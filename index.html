@@ -1,16 +1,54 @@
+<!DOCTYPE html>
 <html>
     <head>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+    <body onload="showrate()">
+        <div id="container">
+            <div>
+                <h1>Simple Interest Calculator</h1>
+                <table id="table1">
+                    <tr>
+                            <td>Amount</td> 
+                            <td id="ta" colspan="2"><input type="number"  id="principal"></td> 
+                    </tr>
+                    <tr>
+                            <td>Interest Rate</td> 
+                            <td colspan="2"><input type="range"  id="rate" min="0.0" max="20.0" step="0.25" onchange="showrate()"><span id="showrate">Interest</span></td>
+                    </tr>
+                    <tr>
+                            <td>No. of Years</td> 
+                            <td>
+                                <select name="years" id="years">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </td>   
+                            
+                    </tr>
+                    <tr>
+                        <td colspan="3"> <button onclick="compute()">Compute Interest</button> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p id="wasHidden">If you deposite <mark id="1">1</mark><br>
+                            at an interst rate of <mark id="2">2</mark><br>
+                            You will receive an amount of <mark id="3">3</mark>,<br>
+                            in the year <mark id="4">4</mark></p>
+                        </td>
+                    </tr>
+                </table>
+                <footer>©Everyone Can Get Rich</footer>    
+            </div>
+        </div>
     </body>
 </html>
