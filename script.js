@@ -2,7 +2,7 @@ function showrate()
 {
     var rate = document.getElementById("rate");
     document.getElementById("showrate").innerHTML=`${rate.value}%`;
-    return rate.value;
+
 }
 
 setInterval(showrate,1);
